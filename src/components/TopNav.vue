@@ -13,8 +13,7 @@ import {inject,Ref} from 'vue';
 
 export default {
   setup(){
-    const asideVisible = inject<Ref<boolean>>('xxx')
-    console.log('TopNav 获取的asideVisible的值为'+asideVisible.value)
+    const asideVisible = inject<Ref<boolean>>('asideVisible')
     const toggleMenu=()=>{
       asideVisible.value = ! asideVisible.value
     }
@@ -31,6 +30,8 @@ export default {
   background: pink;
   display: flex;
   padding: 16px;
+  justify-content: center;
+  align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -41,6 +42,14 @@ export default {
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+  }
+  @media (max-width:500px) {
+    >.menu{
+      display: none;
+    }
+    >.logo{
+      margin: 0 auto;
     }
   }
 }

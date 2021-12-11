@@ -30,8 +30,7 @@ import {inject, Ref} from 'vue';
 export default {
   components: {TopNav},
   setup(){
-    const asideVisible = inject<Ref<boolean>>('xxx')
-    console.log('Doc aside 获取的asideVisible的值为'+asideVisible.value)
+    const asideVisible = inject<Ref<boolean>>('asideVisible')
     return {asideVisible}
   }
 }
