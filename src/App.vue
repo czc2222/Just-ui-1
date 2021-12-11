@@ -1,9 +1,7 @@
 <template>
-  <div>导航栏</div>
-  <router-link to="/">frank</router-link> |
-  <router-link to="/xxx">frank2</router-link>
-  <hr>
-  <router-view/>
+  <div>
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -11,8 +9,6 @@
 
 export default {
   name: 'App',
-  components: {
-
-  }
+  components: {}
 }
 </script>
