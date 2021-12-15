@@ -3,8 +3,14 @@
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="x" :close-on-click-overlay="false" :ok="f1" :cancel="f2">
-    <div>hi</div>
-    <div>你好</div>
+    <template v-slot:title>
+      <div>标题</div>
+    </template>
+    <template v-slot:content>
+      <div>hi</div>
+      <div>你好</div>
+    </template>
+
   </Dialog>
 </template>
 <script lang="ts">
