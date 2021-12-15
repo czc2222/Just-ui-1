@@ -1,8 +1,7 @@
 <template>
   <div>
-    Tabs 组件
-    <component :is="defaults[0]"/>
-    <component :is="defaults[1]"/>
+    <div v-for="(t,index) in title" :key="index">{{t}}</div>
+    <component v-for="(c,index) in defaults" :is="c" :key="index"/>
   </div>
 </template>
 <script lang="ts">
@@ -18,7 +17,10 @@ export default {
           }
         }
     );
-    return {defaults};
+    const title= defaults.map(tag=>{
+      return tag.props.title
+    })
+    return {defaults,title};
   }
 };
 </script>
