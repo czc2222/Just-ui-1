@@ -5,8 +5,9 @@
            v-for="(t,index) in titles" :key="index"
            :class="{selected:t === selected}"
            @click="select(t)"
+           :ref="el=>{if(el) navItems[index] =el}"
       >{{t}}</div>
-      <div class="gulu-tabs-nav-indicator"></div>
+      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
       <component class="gulu-tabs-content-item"
@@ -19,6 +20,7 @@
 </template>
 <script lang="ts">
 import Tab from './Tab.vue';
+import {onMounted, ref} from 'vue';
 
 
 export default {
@@ -28,6 +30,14 @@ export default {
     }
   },
   setup(props, context) {
+    const navItems =ref<HTMLDivElement[]>([])
+    const indicator =ref<HTMLDivElement>(null)
+    onMounted(()=>{ //挂载之后
+      const divs =navItems.value
+      const result =divs.filter(div=>div.classList.contains('selected'))[0]  //获取被选中的class
+      const {width}=result.getBoundingClientRect() //获取被选中的div的宽度
+      indicator.value.style.width = width + 'px'
+    })
     const defaults = context.slots.default();
 
     defaults.forEach((tag) => {
@@ -43,7 +53,7 @@ export default {
       context.emit('update:selected',title)
     }
 
-    return {defaults,titles,select};
+    return {defaults,titles,select,navItems,indicator};
   }
 };
 </script>
