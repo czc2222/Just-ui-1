@@ -10,17 +10,13 @@
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
-      <component class="gulu-tabs-content-item"
-                 v-for="(c,index) in defaults"
-                 :is="c" :key="index"
-                 :class="{selected:c.props.title === selected}"
-                 />
+      <component :is="current" :key="current.props.title"/>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Tab from './Tab.vue';
-import {onMounted, ref, watchEffect} from 'vue';
+import {computed, onMounted, ref, watchEffect} from 'vue';
 
 
 export default {
@@ -53,6 +49,9 @@ export default {
           }
         }
     );
+    const current = computed(()=>{
+      return defaults.filter(tag=>tag.props.title === props.selected)[0]
+    })
     const titles= defaults.map(tag=>{
       return tag.props.title
     })
@@ -60,7 +59,7 @@ export default {
       context.emit('update:selected',title)
     }
 
-    return {defaults,titles,select,selectedItem,indicator,container};
+    return {defaults,titles,select,selectedItem,indicator,container,current};
   }
 };
 </script>
@@ -100,12 +99,7 @@ $border-color: #d9d9d9;
   &-content {
     padding: 8px 0;
 
-    &-item{
-      display: none;
-      &.selected{
-        display: block;
-      }
-    }
+
 
   }
 
