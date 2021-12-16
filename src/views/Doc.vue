@@ -9,10 +9,10 @@
             <router-link to="/doc/intro">介绍</router-link>
           </li>
           <li>
-            <router-link to="/doc/getStart">开始上手</router-link>
+            <router-link to="/doc/install">安装</router-link>
           </li>
           <li>
-            <router-link to="/doc/install">安装</router-link>
+            <router-link to="/doc/getStart">开始使用</router-link>
           </li>
         </ol>
         <h2>组件列表</h2>
@@ -84,14 +84,25 @@ aside {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 70px 0 16px 16px;
+  padding: 86px 0 16px 0;
+
   height: 100%;
   > h2 {
     margin-bottom: 4px;
+    padding: 0 16px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      > a{
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+      }
+
+
+      .router-link-active{
+        background: white;
+      }
     }
   }
   main {
