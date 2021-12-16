@@ -31,7 +31,6 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  background: pink;
   display: flex;
   padding: 16px;
   justify-content: center;
