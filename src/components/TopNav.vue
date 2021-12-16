@@ -15,6 +15,7 @@
       <use xlink:href="#icon-menu"></use>
     </svg>
   </div>
+
 </template>
 
 <script lang="ts">
@@ -39,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: black;
 .topnav {
   color: $color;
   position: fixed;
