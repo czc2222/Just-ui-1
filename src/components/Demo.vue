@@ -10,7 +10,7 @@
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="html" />
     </div>
-    <span>import Switch from '../lib/Switch.vue'  需要修改成自己文件的路径</span>
+
   </div>
 </template>
 <script lang="ts">
