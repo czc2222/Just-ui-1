@@ -63,6 +63,7 @@ $border-color: #d9d9d9;
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
     >pre {
+      border:1px solid red;
       line-height: 1.1;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;

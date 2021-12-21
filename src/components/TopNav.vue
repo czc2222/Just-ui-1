@@ -47,7 +47,7 @@ $color: black;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   padding: 16px;
   justify-content: center;
