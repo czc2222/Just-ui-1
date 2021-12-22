@@ -4,9 +4,7 @@
   </div>
 </template>
 <script lang="ts">
-
+export default {
+  name:'JustTab'
+}
 </script>
-
-<style lang="scss" >
-
-</style>
