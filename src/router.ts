@@ -23,6 +23,7 @@ export const router = createRouter({
         {path:'intro',component:md(intro)},
         {path:'getStart',component:md(getStarted)},
         {path:'install',component:md(install)},
+        {path:'install2',component:md(install)},
         {path:'switch',component:SwitchDemo},
         {path:'button',component:ButtonDemo},
         {path:'dialog',component:DialogDemo},

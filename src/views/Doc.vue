@@ -3,32 +3,36 @@
     <TopNav :toggle-menu-button-visible="true"  class="nav" />
     <div class="content">
       <aside v-if="asideVisible">
-        <h2>文档</h2>
+        <h3>入门</h3>
         <ol>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
           </li>
           <li>
-            <router-link to="/doc/install">安装</router-link>
+            <router-link to="/doc/install">YARN</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install2">NPM</router-link>
           </li>
           <li>
             <router-link to="/doc/getStart">开始使用</router-link>
           </li>
         </ol>
-        <h2>组件列表</h2>
+        <h3>组件列表</h3>
         <ol>
-          <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
-          </li>
           <li>
             <router-link to="/doc/button">Button 组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/switch">Switch 组件</router-link>
           </li>
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/dialog">Dialog 组件</router-link>
+          </li>
+
         </ol>
       </aside>
       <main>
@@ -80,7 +84,7 @@ $aside-index:10;
   }
 }
 aside {
-  background: lightblue;
+  background: #fdf7f2;
   z-index: $aside-index;
   width: 150px;
   position: fixed;
@@ -89,21 +93,35 @@ aside {
   padding: 86px 0 16px 0;
 
   height: 100%;
-  > h2 {
+  > h3 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding: 0 8px;
   }
   > ol {
     > li {
+
       > a{
         display: block;
         padding: 4px 16px;
         text-decoration: none;
+        position: relative;
       }
 
 
       .router-link-active{
         background: white;
+        color:#0170fe;
+
+        &::before{
+            position: absolute;
+            width: 2px;
+            content: '';
+            height: 100%;
+            background: #0170fe;
+            margin: -4px  132px;
+
+
+        }
       }
     }
   }

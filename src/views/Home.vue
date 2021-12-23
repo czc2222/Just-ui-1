@@ -6,8 +6,7 @@
         <h1>Just UI</h1>
         <h2>一个简单好用的 UI 框架</h2>
         <p class="actions">
-          <a href="https://github.com">GitHub</a>
-          <router-link to="/doc">快速开始→</router-link>
+          <router-link to="/doc">快速开始</router-link>
         </p>
       </div>
     </div>
@@ -36,6 +35,9 @@
         </li>
       </ul>
     </div>
+    <div class="footer">
+      MIT Licensed | Copyright © 2021-present McCall Chen
+    </div>
   </div>
 </template>
 
@@ -47,13 +49,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$green: #02bcb0;
+$green: #0170fe;
 $border-radius: 4px;
-$color: #007974;
+$color: black;
 
 .topnavAndBanner {
   background: #fdf7f2;
-  //background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
@@ -83,7 +84,7 @@ $color: #007974;
     > li {
       margin: 16px 0;
       display: grid;
-      justify-content: center;
+      justify-content: start;
       align-content: space-between;
       grid-template-areas:
         "icon title"
@@ -109,14 +110,22 @@ $color: #007974;
   }
 }
 .banner {
-  color: $color;
+
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  > h1{
+    color: $color;
+   font-size: xxx-large;
+  }
+  > h2{
+    padding-top: 20px;
+    color:#6a8bad;
+  }
   > .actions{
-    padding: 8px 0;
+    padding: 16px 0;
     a {
       margin:0 8px;
       background: $green;
@@ -129,5 +138,11 @@ $color: #007974;
       }
     }
   }
+}
+.footer{
+  padding: 2.5rem;
+  border-top: 1px solid #eaecef;
+  text-align: center;
+  color: #4e6e8e;
 }
 </style>
