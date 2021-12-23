@@ -11,7 +11,7 @@
         <router-link to="/">主页</router-link>
       </li>
       <li>
-        <router-link to="/doc">文档</router-link>
+        <router-link to="/doc" class="doc">文档</router-link>
       </li>
 
     </ul>
@@ -64,6 +64,7 @@ $color: black;
   padding: 0 16px;
   justify-content: center;
   align-items: center;
+
   > .logo {
     display: flex;
     justify-content: center;
@@ -124,13 +125,14 @@ $color: black;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+
   }
   @media (max-width:500px) {
-    >.menu,.github{
+    >.github,.menu{
       display: none;
     }
     >.logo{
-      margin: 0 auto;
+      margin: 16px 0 auto ;
     }
     > .toggleAside{
       display: inline-block;

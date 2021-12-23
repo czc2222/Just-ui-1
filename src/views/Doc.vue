@@ -62,6 +62,9 @@ $aside-index:10;
   height: 100vh;
   > .nav {
     flex-shrink: 0;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 16px;
+    background: white;
   }
   > .content {
     flex-grow: 1;
@@ -74,17 +77,20 @@ $aside-index:10;
 }
 .content {
   display: flex;
+
   > aside {
     flex-shrink: 0;
   }
   > main {
     flex-grow: 1;
+    margin-top: 16px;
     padding: 16px;
     background: white;
+    overflow: auto;
   }
 }
 aside {
-  background: #fdf7f2;
+  background: white;
   z-index: $aside-index;
   width: 150px;
   position: fixed;
