@@ -28,8 +28,7 @@
   </Popover>
 </template>
 <script lang="ts">
-import Popover from '../../lib/Popover.vue';
-import Button from '../../lib/Button.vue';
+import {Popover,Button} from '../../lib/index'
 
 export default {
   components: {Button, Popover}
