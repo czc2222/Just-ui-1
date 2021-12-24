@@ -4,8 +4,8 @@
 <template>
   <div>
     <Button>你好</Button>
-    <Button theme="link">你好</Button>
-    <Button theme="text">你好</Button>
+    <Button theme="link">Hi</Button>
+    <Button theme="text">Hello</Button>
   </div>
 </template>
 <script lang="ts">
